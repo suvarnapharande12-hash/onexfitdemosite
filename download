@@ -1,0 +1,51 @@
+@import 'tailwindcss';
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#07090c] text-white antialiased;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+      'Apple Color Emoji', 'Segoe UI Emoji';
+  }
+
+  ::selection {
+    background: rgba(228, 190, 106, 0.35);
+    color: #fff;
+  }
+
+  .using-mouse * {
+    outline: none !important;
+  }
+}
+
+@layer utilities {
+  .luxury-btn {
+    @apply bg-[#e4be6a] text-black transition duration-300 hover:scale-[1.03] hover:shadow-[0_0_34px_rgba(228,190,106,0.5)];
+  }
+
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+      opacity 700ms ease,
+      transform 700ms ease;
+    will-change: transform, opacity;
+  }
+
+  .revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
